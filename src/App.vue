@@ -5,8 +5,23 @@
   </div>
 </template>
 <script>
+import db from './db.js'
 import Navigation from '@/components/Navigation'
 export default {
+  name: 'App',
+  data: function() {
+    return {
+      user: null
+    }
+  },
+  mounted() {
+    db.collection('users')
+      .doc('jUOHf2Mcci2pWDZBASYO')
+      .get()
+      .then(snapshot => {
+        this.user = snapshot.data().name
+      })
+  },
   components: {
     Navigation
   }
