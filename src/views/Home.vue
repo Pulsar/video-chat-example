@@ -5,21 +5,8 @@
   </div>
 </template>
 <script>
-import db from '../db.js'
 export default {
-  name: 'home',
-  data: function() {
-    return {
-      user: null
-    }
-  },
-  mounted() {
-    db.collection('users')
-      .doc('jUOHf2Mcci2pWDZBASYO')
-      .get()
-      .then(snapshot => {
-        this.user = snapshot.data().name
-      })
-  }
+  name: 'Home',
+  props: ['user']
 }
 </script>

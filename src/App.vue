@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Navigation />
-    <router-view />
+    <Navigation :user="user" />
+    <router-view :user="user" />
   </div>
 </template>
 <script>
